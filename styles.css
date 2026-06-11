@@ -962,6 +962,18 @@ summary:focus-visible {
     color: var(--text-medium);
 }
 
+.faq-link {
+    color: var(--brand-blue);
+    text-decoration: underline;
+    text-decoration-color: var(--brand-accent);
+    text-underline-offset: 3px;
+    transition: color 0.3s ease;
+}
+
+.faq-link:hover {
+    color: var(--brand-accent-dark);
+}
+
 /* ========================================
    SERVICE AREAS SECTION
    ======================================== */
