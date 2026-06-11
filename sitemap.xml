@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://iplumbyorkshire.co.uk/</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image><image:loc>https://iplumbyorkshire.co.uk/gallery/Bathroom-Almondbury-Shower.jpg</image:loc></image:image>
+    <image:image><image:loc>https://iplumbyorkshire.co.uk/gallery/Bathroom-Wakefield-Details.jpg</image:loc></image:image>
+    <image:image><image:loc>https://iplumbyorkshire.co.uk/gallery/Bathroom-Almondbury-Wallpaper.jpg</image:loc></image:image>
+    <image:image><image:loc>https://iplumbyorkshire.co.uk/gallery/Bathroom-Harrogate-Main.jpg</image:loc></image:image>
+    <image:image><image:loc>https://iplumbyorkshire.co.uk/gallery/Bathroom-Tingley-Lighting.jpg</image:loc></image:image>
+    <image:image><image:loc>https://iplumbyorkshire.co.uk/gallery/Bathroom-Tingley-Touches.jpg</image:loc></image:image>
+    <image:image><image:loc>https://iplumbyorkshire.co.uk/gallery/Bathroom-Mirfield-Design.jpg</image:loc></image:image>
+    <image:image><image:loc>https://iplumbyorkshire.co.uk/gallery/Bathroom-Huddersfield-HisHers.jpg</image:loc></image:image>
+    <image:image><image:loc>https://iplumbyorkshire.co.uk/gallery/Bathroom-Huddersfield-Work-in-Progress.jpg</image:loc></image:image>
+    <image:image><image:loc>https://iplumbyorkshire.co.uk/gallery/Bathroom-Holmfirth-Tiling.jpg</image:loc></image:image>
+  </url>
+</urlset>
