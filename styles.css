@@ -1067,6 +1067,7 @@ summary:focus-visible {
     position: relative;
     z-index: 1;
     transition: color 0.3s ease;
+    overflow-wrap: anywhere;
 }
 
 .contact-method-card:hover .contact-method-value {
