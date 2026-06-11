@@ -36,6 +36,51 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Anchored sections land below the sticky header */
+section[id] {
+    scroll-margin-top: 100px;
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 2000;
+    background: var(--brand-blue-dark);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+    left: 0;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+    outline: 3px solid var(--brand-accent);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
 /* ========================================
    CONTAINERS
    ======================================== */
@@ -88,6 +133,28 @@ html {
 
 .logo:hover {
     opacity: 0.85;
+}
+
+.header-nav {
+    display: flex;
+    gap: 2rem;
+    margin-left: auto;
+}
+
+.header-nav-link {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--text-medium);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.header-nav-link:hover {
+    color: var(--brand-blue);
+    border-bottom-color: var(--brand-accent);
 }
 
 .btn-header {
@@ -222,7 +289,7 @@ html {
 
 .btn-primary-large {
     background: var(--brand-accent);
-    color: white;
+    color: var(--brand-blue-dark);
     padding: 1.125rem 2.5rem;
     border-radius: 2px;
     font-weight: 500;
@@ -764,6 +831,78 @@ html {
 }
 
 /* ========================================
+   FAQ SECTION
+   ======================================== */
+
+.section-faqs {
+    padding: 7rem 2rem;
+    background: var(--bg-light);
+}
+
+.faqs-list {
+    max-width: 800px;
+    margin: 4rem auto 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.faq-item {
+    background: var(--bg-white);
+    border: 1px solid var(--border-subtle);
+    border-radius: 2px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover,
+.faq-item[open] {
+    border-color: var(--brand-accent);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.faq-question {
+    cursor: pointer;
+    padding: 1.5rem 1.75rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    list-style: none;
+    position: relative;
+    padding-right: 3.5rem;
+    transition: color 0.3s ease;
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 1.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--brand-accent);
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] .faq-question::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.faq-question:hover {
+    color: var(--brand-blue);
+}
+
+.faq-answer {
+    padding: 0 1.75rem 1.5rem;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--text-medium);
+}
+
+/* ========================================
    SERVICE AREAS SECTION
    ======================================== */
 
@@ -900,6 +1039,11 @@ html {
     margin-bottom: 0.75rem;
 }
 
+/* Hidden anti-spam field */
+.form-honeypot {
+    display: none;
+}
+
 .form-input-elegant {
     width: 100%;
     padding: 1rem 1.25rem;
@@ -923,7 +1067,7 @@ html {
 
 .btn-form-submit {
     background: var(--brand-accent);
-    color: white;
+    color: var(--brand-blue-dark);
     padding: 1.125rem 3rem;
     border: none;
     border-radius: 2px;
@@ -974,6 +1118,19 @@ html {
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.7;
     font-size: 0.9375rem;
+    margin-bottom: 0.75rem;
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--brand-accent);
+    border-bottom-color: var(--brand-accent);
 }
 
 .footer-copyright {
@@ -1016,6 +1173,14 @@ html {
 .feature-item:nth-child(2) { transition-delay: 0.2s; }
 .feature-item:nth-child(3) { transition-delay: 0.3s; }
 .feature-item:nth-child(4) { transition-delay: 0.4s; }
+
+/* Hide inline nav once the header gets tight - the sticky call
+   button and in-page flow still cover navigation on mobile */
+@media (max-width: 1000px) {
+    .header-nav {
+        display: none;
+    }
+}
 
 @media (max-width: 768px) {
     /* Header - Much Smaller on Mobile */
@@ -1112,6 +1277,7 @@ html {
     .section-projects,
     .section-why,
     .section-testimonials,
+    .section-faqs,
     .section-contact {
         padding: 3rem 1.25rem;
     }
@@ -1224,6 +1390,26 @@ html {
         font-size: 1rem;
     }
     
+    /* FAQs */
+    .faqs-list {
+        margin-top: 2.5rem;
+    }
+
+    .faq-question {
+        padding: 1.25rem 1.25rem;
+        padding-right: 3rem;
+        font-size: 1rem;
+    }
+
+    .faq-question::after {
+        right: 1.25rem;
+    }
+
+    .faq-answer {
+        padding: 0 1.25rem 1.25rem;
+        font-size: 0.9375rem;
+    }
+
     /* Service Areas */
     .section-areas {
         padding: 2.5rem 1.25rem;

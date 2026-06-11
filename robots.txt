@@ -1,0 +1,5 @@
+# iplumbyorkshire.co.uk - all crawlers welcome, including AI/answer engines
+User-agent: *
+Allow: /
+
+Sitemap: https://iplumbyorkshire.co.uk/sitemap.xml
